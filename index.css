@@ -1,0 +1,82 @@
+ /* 偷懒直接改Ai的侧边导航栏哈哈 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+    .header{
+      color: rgba(58, 140, 61, 1);
+     }
+        body {
+
+            padding-left: 220px;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+
+        /* 侧边栏核心样式 */
+        .sidebar {
+            /* 固定定位，始终在左侧 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 220px;
+            height: 100vh;
+            background-color: #ffffff;
+            color: #fff;
+            /* 防止内容溢出 */
+            overflow-y: auto;
+            /* 过渡动画，适配响应式收缩 */
+            transition: width 0.3s ease;
+        }
+
+        .sidebar-header {
+            padding: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid rgba(232, 232, 232, 1);
+             border-right: 1px solid rgba(232, 232, 232, 1);
+            text-align: center;
+        }
+
+        .nav-list {
+            border-right: 1px solid rgba(232, 232, 232, 1);
+            list-style: none;
+        }
+
+       
+
+        .nav-link {
+            display: block;
+            padding: 20px 30px;
+            color: #bdc3c7;
+            text-decoration: none;
+       
+            transition: all 0.2s ease;
+        }
+
+        
+        .nav-link:hover {
+            background-color: #34495e;
+            color: #fff;
+            padding-left: 25px;
+        }
+
+        /* 选中/激活状态 */
+        .nav-link.active {
+
+            color: rgba(58, 140, 61, 1);
+        }
+
+ 
+
+       .user-header{
+         border-bottom: 1px solid rgba(232, 232, 232, 1) ;
+            height: 8.2vh;
+            background-color: #ffffff;
+            color: #fff;
+             display: flex;
+            justify-content: flex-end; 
+                align-items: center;
+       }
