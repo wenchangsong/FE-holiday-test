@@ -93,8 +93,63 @@
             </div>
         </div>
     </div>
-<div class="up-goods">1</div>
-<div class="up-expert">1</div>
+    <br>
+<div class="container">
+    <div class="form-title">农资商品录入</div>
+        
+        <div class="form-item">
+            <label>商品照片<span class="required">*</span></label>
+            <div class="upload-area" id="uploadArea">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="24" viewBox="0 0 32 24" fill="none"><path d="M29 24L3 24C1.34302 24 0 22.66 0 21L0 3C0 1.33997 1.34302 0 3 0L29 0C30.657 0 32 1.33997 32 3L32 21C32 22.66 30.657 24 29 24ZM7 3.5C5.06702 3.5 3.5 5.06995 3.5 7C3.5 8.93005 5.06702 10.5 7 10.5C8.93298 10.5 10.5 8.93005 10.5 7C10.5 5.06995 8.93298 3.5 7 3.5ZM4 20L28 20L28 13L22.53 7.53003C22.237 7.23999 21.763 7.23999 21.47 7.53003L13 16L9.53003 12.53C9.237 12.24 8.763 12.24 8.46997 12.53L4 17L4 20Z"   fill="#666666" ></path></svg></div>
+                <div class="text">点击或拖拽上传</div>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label>商品价格<span class="required">*</span></label>
+             <div class="input-price">
+                <div class="price-prefix"><span>¥</span></div>
+                <input type="text" placeholder="请输入价格">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label>商品详情<span class="required">*</span></label>
+            <textarea class="textarea-detail" placeholder="请输入商品详情"></textarea>
+        </div>
+
+        <button class="btn-confirm">确认</button>
+</div>
+<br>
+<div class="container">
+        <div class="form-title">专家信息录入</div>
+        
+        <div class="form-item">
+            <label>专家姓名<span class="required">*</span></label>
+            <input type="text" class="input-text" placeholder="请输入专家姓名">
+        </div>
+
+        <div class="form-item">
+            <label>联系电话<span class="required">*</span></label>
+            <div class="input-phone">
+                <div class="phone-prefix"></div>
+                <input type="text" class="phone-input" placeholder="请输入电话号码">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label>专业领域<span class="required">*</span></label>
+            <select class="select-field">
+                <option>种植</option>
+                <option>养殖</option>
+                <option>农机</option>
+                <option>农资</option>
+            </select>
+        </div>
+
+        <button class="btn-confirm">确认</button>
+    </div>
 <div class="up-order">1</div>
 <div class="up-handbook">1</div>
 </main>
