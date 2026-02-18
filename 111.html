@@ -48,8 +48,8 @@
     </aside>
 
     <!-- 主内容区 -->
-     <main>
-<div class="user-header">
+    
+    <div class="user-header">
      <div class="user-info">
             <div class="user-avatar">👤</div>
             <span>管理员</span>
@@ -59,13 +59,36 @@
             <span style="color: rgba(255, 77, 79, 1);">退出</span>
 
         </a>
+</div> 
+ <main>
+ <h2>快捷功能</h2>
+<div class="tool">
+  
+<div></div>
+<div></div>
+<div></div>
 </div>
-<div class="tool">1</div>
 <div class="up-xingxi">1</div>
 <div class="up-goods">1</div>
 <div class="up-expert">1</div>
 <div class="up-order">1</div>
 <div class="up-handbook">1</div>
 </main>
+  <script>
+        // 获取所有导航链接
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        // 给每个链接添加点击事件
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // 阻止默认跳转（实际项目可根据需求移除）
+                e.preventDefault();
+                // 移除所有链接的active类
+                navLinks.forEach(item => item.classList.remove('active'));
+                // 给当前点击的链接添加active类
+                this.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>

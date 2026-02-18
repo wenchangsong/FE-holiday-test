@@ -1,10 +1,5 @@
  /* 偷懒直接改Ai的侧边导航栏哈哈 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: "Microsoft Yahei", sans-serif;
-        }
+      
     .header{
       color: rgba(58, 140, 61, 1);
      }
@@ -79,4 +74,31 @@
              display: flex;
             justify-content: flex-end; 
                 align-items: center;
+             padding-right: 20px;
        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+            font-size: 14px;
+            color: #666;
+
+        }
+.user-avatar{
+  width: 24px;
+            height: 24px;
+            margin-right: 8px;
+            border-radius: 50%;
+            background-color: #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 12px;
+        }
+
+main{
+    padding: 20px;
+     margin: 0 auto;
+}
