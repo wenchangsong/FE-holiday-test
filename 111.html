@@ -150,8 +150,105 @@
 
         <button class="btn-confirm">确认</button>
     </div>
-<div class="up-order">1</div>
-<div class="up-handbook">1</div>
+<div class="container">
+    <div class="form-title">农机订单管理</div>
+
+        <div class="form-section">
+            <div class="section-title"><span class="required" style="color: red;">*</span>作业时间</div>
+            <div class="radio-group">
+                <div class="radio-item">
+                    <input type="radio" name="workTime" id="time1" value="6:00-10:00">
+                    <label for="time1">6:00-10:00</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" name="workTime" id="time2" value="10:00-14:00">
+                    <label for="time2">10:00-14:00</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" name="workTime" id="time3" value="14:00-18:00">
+                    <label for="time3">14:00-18:00</label>
+                </div>
+                <div class="radio-item">
+                    <input type="radio" name="workTime" id="time4" value="18:00-22:00">
+                    <label for="time4">18:00-22:00</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label><span class="required">*</span>作业机器</label>
+            <select class="select-field">
+                <option value="">请选择作业机器</option>
+                <option value="machine1">机器1</option>
+                <option value="machine2">机器2</option>
+            </select>
+        </div>
+
+        <div class="form-item">
+            <label><span class="required">*</span>发单人</label>
+            <select class="select-field">
+                <option value="">搜索发单人</option>
+                <option value="sender1">发单人1</option>
+                <option value="sender2">发单人2</option>
+            </select>
+
+            <label><span class="required">*</span>接单⼈</label>
+            <select class="select-field">
+                <option value="">选择农机手</option>
+                <option value="receiver1">农机手1</option>
+                <option value="receiver2">农机手2</option>
+            </select>
+        </div>
+
+        <div class="form-item">
+            <label>作业地点</label>
+            <div class="input-with-icon">
+                <input type="text" class="input-text" placeholder="请输入作业地点">
+                <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11.6201171875" height="13.89990234375" viewBox="0 0 11.6201171875 13.89990234375" fill="none"><path d="M11.17 3.46997C11.02 3.12988 10.8401 2.81006 10.63 2.51001C10.42 2.19995 10.1801 1.91992 9.92004 1.65991C9.65002 1.3999 9.36011 1.16992 9.05005 0.969971C8.74011 0.76001 8.41003 0.589844 8.07007 0.449951C7.3501 0.149902 6.6001 0 5.81006 0C5.03003 0 4.27002 0.149902 3.55005 0.449951C2.86011 0.72998 2.24011 1.13989 1.71008 1.65991C1.44006 1.91992 1.21008 2.19995 1 2.5C0.790039 2.81006 0.610107 3.12988 0.460083 3.46997C0.150024 4.16992 0 4.91992 0 5.68994C0 6.79004 0.26001 7.88989 0.780029 8.94995C1.20007 9.80005 1.78003 10.6299 2.52002 11.4199C3.77002 12.77 5.09009 13.5898 5.46008 13.8101C5.51001 13.8398 5.57007 13.8599 5.63 13.8799C5.69006 13.8999 5.75 13.8999 5.81006 13.8999C5.93005 13.8999 6.05005 13.8699 6.16003 13.8101C6.53003 13.5898 7.8501 12.77 9.1001 11.4199C9.84009 10.6299 10.42 9.80005 10.8401 8.94995C11.3601 7.88989 11.6201 6.79004 11.6201 5.68994C11.6201 4.91992 11.4701 4.16992 11.17 3.46997ZM5.81006 12.71C4.78003 12.05 1.12012 9.45996 1.12012 5.68994C1.12012 4.46997 1.61011 3.32983 2.49011 2.46997C3.38 1.59985 4.56006 1.12988 5.81006 1.12988C7.07007 1.12988 8.25 1.59985 9.13 2.46997C10.01 3.32983 10.5 4.46997 10.5 5.68994C10.5 9.45996 6.84009 12.05 5.81006 12.71ZM5.81006 3.06006C4.29004 3.06006 3.06006 4.29004 3.06006 5.81006C3.06006 7.32983 4.29004 8.56006 5.81006 8.56006C7.33008 8.56006 8.56006 7.32983 8.56006 5.81006C8.56006 4.29004 7.33008 3.06006 5.81006 3.06006ZM7.05005 7.05005C6.89001 7.20996 6.70007 7.33984 6.4801 7.42993C6.27002 7.52002 6.04004 7.56006 5.81006 7.56006C5.3501 7.56006 4.91003 7.37988 4.57007 7.05005C4.41003 6.88989 4.28003 6.69995 4.20007 6.47998C4.11011 6.27002 4.06006 6.04004 4.06006 5.81006C4.06006 5.34985 4.25 4.90991 4.57007 4.57983C4.91003 4.23999 5.3501 4.06006 5.81006 4.06006C6.28003 4.06006 6.72009 4.23999 7.05005 4.57983C7.38 4.90991 7.56006 5.34985 7.56006 5.81006C7.56006 6.28003 7.38 6.71997 7.05005 7.05005Z"   fill="#000000" fill-opacity="0.88"></path></svg></span>
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label><span class="required">*</span>作业面积（亩）</label>
+            <input type="text" class="input-text" id="area">
+
+            <label><span class="required">*</span>每亩单价</label>
+            <div class="input-price">
+                <span>¥</span>
+                <input type="text" id="price">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label>订单总价</label>
+            <div class="input-price input-total">
+                <span>¥</span>
+                <input type="text" id="total" readonly>
+            </div>
+        </div>
+
+        <button class="btn-submit" id="submitBtn">提交订单</button>
+</div>
+<div class="container">
+        <div class="form-title">农业手册录入</div>
+        
+        <div class="form-item">
+            <label>手册照片<span class="required">*</span></label>
+            <div class="upload-area" id="uploadArea">
+                <div class="icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="32" height="24" viewBox="0 0 32 24" fill="none"><path d="M29 24L3 24C1.34302 24 0 22.6599 0 21L0 3C0 1.34009 1.34302 0 3 0L29 0C30.657 0 32 1.34009 32 3L32 21C32 22.6599 30.657 24 29 24ZM7 3.5C5.06702 3.5 3.5 5.07007 3.5 7C3.5 8.92993 5.06702 10.5 7 10.5C8.93298 10.5 10.5 8.92993 10.5 7C10.5 5.07007 8.93298 3.5 7 3.5ZM4 20L28 20L28 13L22.53 7.53003C22.237 7.23999 21.763 7.23999 21.47 7.53003L13 16L9.53003 12.53C9.237 12.24 8.763 12.24 8.46997 12.53L4 17L4 20Z"   fill="#666666" ></path></svg></div>
+                <div class="text">点击或拖拽上传</div>
+                <input type="file" id="fileInput" accept="image/*" style="display: none;">
+            </div>
+        </div>
+
+        <div class="form-item">
+            <label>手册详情<span class="required">*</span></label>
+            <textarea class="textarea-detail" placeholder="请输入手册详情"></textarea>
+        </div>
+
+        <button class="btn-submit">确认手册</button>
+    </div>
+
 </main>
   <script>
         // 获取所有导航链接
@@ -160,7 +257,7 @@
         // 给每个链接添加点击事件
         navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
-                // 阻止默认跳转（实际项目可根据需求移除）
+          
                 e.preventDefault();
                 // 移除所有链接的active类
                 navLinks.forEach(item => item.classList.remove('active'));
