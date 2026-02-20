@@ -44,21 +44,22 @@ body {
     position: fixed;
     top: 0px;
     left: 0;
-    width: var(--sidebar-width);
+    width: 256px;
     height: 100vh;
     background-color: var(--white-color);
     border-right: 1px solid var(--border-color);
     overflow-y: auto;
     transition: all 0.3s ease;
     z-index: 100;
+    
 }
 
 .sidebar-header {
  line-height: 63.5px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600;
     border-bottom: 1px solid var(--border-color);
-    text-align: center;
+  padding-left: 25px;
 }
 
 .header {
@@ -82,7 +83,9 @@ body {
     transition: all 0.2s ease;
     border-left: 3px solid transparent;
 }
-
+.nav-link span{
+    margin-left: 10px;
+}
 .nav-link:hover {
     background-color: rgba(58, 140, 61, 0.05);
     color: var(--primary-color);
@@ -98,17 +101,18 @@ body {
 
 /* 用户头部优化 */
 header {
-    
+    margin-left:36px ;
+    margin-right: 256px;
     position: fixed;
     top: 0px;
 
-    width: 100%;
+    width: 1184px;
     height: 64px;
     background-color: var(--white-color);
     border-bottom: 1px solid var(--border-color);
-    overflow-y: auto;
+
  
-z-index: 9999;
+    z-index: 9999;
    
     background-color: var(--white-color);
     border-bottom: 1px solid var(--border-color);
@@ -124,6 +128,7 @@ z-index: 9999;
     align-items: center;
     margin-right: var(--spacing-lg);
     color: var(--text-secondary);
+ 
 }
 
 .user-avatar {
@@ -137,6 +142,7 @@ z-index: 9999;
     justify-content: center;
     color: var(--primary-color);
     font-size: 14px;
+
 }
 
 .logout-btn {
@@ -146,6 +152,7 @@ z-index: 9999;
     padding: 6px 12px;
     border-radius: var(--border-radius);
     transition: all 0.2s ease;
+  
 }
 
 .logout-btn:hover {
@@ -165,23 +172,24 @@ z-index: 9999;
 /* 主体内容优化 */
 main {
     margin-top: 64px;
-    padding: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
     flex: 1;
 }
 
 main h2 {
-    text-align: center;
+    margin-left: 65px;
     margin-bottom: var(--spacing-lg);
     color: #333;
     font-size: 20px;
     font-weight: 600;
-    transform: translateX(-500px); /* 修复偏移问题 */
+    justify-content: start;
+   
 }
 
 /* 快捷功能区优化 */
 .tool {
     display: flex;
-    justify-content: center;
+margin-left: 64px;
     flex-wrap: wrap;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
@@ -232,7 +240,7 @@ main h2 {
 /* 表单容器优化 */
 .container {
     max-width: 1136px;
-    margin: 0 auto var(--spacing-lg);
+    margin: 0 54px var(--spacing-lg);
     border: 1px solid var(--border-color);
     border-radius: var(--card-radius);
     padding: var(--spacing-lg);
@@ -332,7 +340,7 @@ main h2 {
     width: 100%;
     min-height: 180px;
     font-size: 14px;
-    resize: vertical;
+    resize: none;
     transition: border-color 0.2s ease;
     margin-bottom:28px;
 }
@@ -413,6 +421,7 @@ main h2 {
 #orders .radio-group {
     margin-left: 0;
 }
+
 
 
 /* 文件上传区域优化 */
