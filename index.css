@@ -4,7 +4,7 @@
     --primary-color: #3a8c3d;
     --primary-light: #73d13d;
     --danger-color: #ff4d4f;
-    --success-color: #52c41a;
+    --success-color:  #3A8C3D;
     --border-color: #e8e8e8;
     --bg-color: #f5f5f5;
     --text-color: #333;
@@ -38,10 +38,11 @@ body {
     min-height: 100vh;
 }
 
+
 /* 侧边栏优化 */
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 0px;
     left: 0;
     width: var(--sidebar-width);
     height: 100vh;
@@ -53,8 +54,8 @@ body {
 }
 
 .sidebar-header {
-    padding: var(--spacing-lg);
-    font-size: 18px;
+ line-height: 63.5px;
+    font-size: 22px;
     font-weight: 600;
     border-bottom: 1px solid var(--border-color);
     text-align: center;
@@ -96,8 +97,19 @@ body {
 }
 
 /* 用户头部优化 */
-.user-header {
-    height: var(--header-height);
+header {
+    
+    position: fixed;
+    top: 0px;
+
+    width: 100%;
+    height: 64px;
+    background-color: var(--white-color);
+    border-bottom: 1px solid var(--border-color);
+    overflow-y: auto;
+ 
+z-index: 9999;
+   
     background-color: var(--white-color);
     border-bottom: 1px solid var(--border-color);
     display: flex;
@@ -152,6 +164,7 @@ body {
 
 /* 主体内容优化 */
 main {
+    margin-top: 64px;
     padding: var(--spacing-lg);
     flex: 1;
 }
@@ -159,10 +172,10 @@ main {
 main h2 {
     text-align: center;
     margin-bottom: var(--spacing-lg);
-    color: var(--primary-color);
+    color: #333;
     font-size: 20px;
     font-weight: 600;
-    transform: translateX(0); /* 修复偏移问题 */
+    transform: translateX(-500px); /* 修复偏移问题 */
 }
 
 /* 快捷功能区优化 */
@@ -321,6 +334,7 @@ main h2 {
     font-size: 14px;
     resize: vertical;
     transition: border-color 0.2s ease;
+    margin-bottom:28px;
 }
 
 .textarea-detail:focus {
@@ -344,6 +358,62 @@ main h2 {
     align-items: center;
     color: var(--text-secondary);
 }
+/* order区域的排列优化 */
+
+#orders .form-item {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column; /* 标签在上，输入框在下 */
+    align-items: flex-start;
+    gap: 6px;
+}
+
+#orders .form-item label {
+    width: auto; /* 取消固定宽度 */
+    font-size: 14px;
+    color: #666;
+    padding-top: 0;
+    text-align: left;
+}
+
+#orders .form-item .input-text,
+#orders .form-item .select-field,
+#orders .form-item .input-price,
+#orders .form-item .input-with-icon {
+    width: 100%; /* 输入框占满整行 */
+}
+
+/* 双列布局：发单人/接单人、作业面积/每亩单价 */
+#orders .form-item.double-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+#orders .form-item.double-row > div {
+    flex: 1; /* 两列平分宽度 */
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+#orders .form-item.double-row label {
+    width: auto;
+}
+
+/* 单选框组保持原样 */
+#orders .form-section {
+    margin-bottom: 16px;
+}
+
+#orders .section-title {
+    margin-bottom: 8px;
+}
+
+#orders .radio-group {
+    margin-left: 0;
+}
+
 
 /* 文件上传区域优化 */
 .upload-area {
@@ -462,13 +532,13 @@ main h2 {
     border-radius: var(--border-radius);
     padding: 0 var(--spacing-lg);
     height: 32px;
-    min-width: 100px;
+    width: 154px;
     font-size: 14px;
     cursor: pointer;
     transition: all 0.2s ease;
     position: absolute;
-    right: var(--spacing-lg);
-    bottom: var(--spacing-lg);
+    right: 96px;
+    bottom: 29px;
 }
 
 .btn-confirm:hover {
@@ -481,13 +551,14 @@ main h2 {
     border: none;
     border-radius: var(--border-radius);
     padding: 0 var(--spacing-lg);
-    height: 36px;
+    height: 32px;
     font-size: 14px;
     cursor: pointer;
-    width: 100%;
+    width: 630px;
     margin: var(--spacing-md) 0 0;
     transition: all 0.2s ease;
     font-weight: 500;
+    
 }
 
 .btn-submit:hover {
