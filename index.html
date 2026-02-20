@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>农业管理平台</title>
+        <link rel="stylesheet" href="./base.css">
+
+    <link rel="stylesheet" href="./index.css">
+
+</head>
+<body>
+    <!-- 侧边导航栏 -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2 class="header">农业管理平台</h2>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#dashboard" class="nav-link active">
+                    <span>控制台</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#machine" class="nav-link">
+                    <span>农机信息</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#materials" class="nav-link">
+                    <span>农资商品</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#experts" class="nav-link">
+                    <span>专家信息</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#orders" class="nav-link">
+                    <span>订单管理</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#manuals" class="nav-link">
+                    <span>手册录入</span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- 主内容区 -->
+    <div class="main-wrapper">
+        <div class="user-header">
+            <div class="user-info">
+                <div class="user-avatar">👤</div>
+                <span>管理员</span>
+            </div>
+            <a href="#" class="logout-btn">
+                <span class="logout-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15.75" height="12" viewBox="0 0 15.75 12" fill="none">
+                        <path d="M15.53 6.532L10.28 11.782C9.81 12.251 9 11.923 9 11.251V8.251L4.75 8.251C4.33 8.251 4 7.916 4 7.501V4.501C4 4.085 4.33 3.751 4.75 3.751L9 3.751V0.751C9 0.082 9.81 -0.249 10.28 0.219L15.53 5.469C15.82 5.763 15.82 6.238 15.53 6.532ZM6 11.626V10.376C6 10.169 5.83 10 5.62 10L3 10C2.45 10 2 9.554 2 9.001V3.001C2 2.448 2.45 2 3 2L5.62 2C5.83 2 6 1.832 6 1.626V0.376C6 0.169 5.83 0 5.62 0L3 0C1.34 0 0 1.344 0 3.001V9.001C0 10.657 1.34 12 3 12L5.62 12C5.83 12 6 11.832 6 11.626Z" fill="#FF4D4F"/>
+                    </svg>
+                </span>
+                <span class="logout-text">退出</span>
+            </a>
+        </div> 
+
+        <main>
+            <h2>快捷功能</h2>
+            <div class="tool">
+                <div class="box">
+                    <a href="#machine">
+                        <img src="./img/01.png" alt="农机信息上传">
+                        <h3>农机信息上传</h3>
+                        <p>上传农机设备信息</p>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="#materials">
+                        <img src="./img/02.png" alt="农资商品录入">
+                        <h3>农资商品录入</h3>
+                        <p>添加新的农资产品</p>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="#experts">
+                        <img src="./img/03.png" alt="专家信息录入">
+                        <h3>专家信息录入</h3>
+                        <p>添加农业专家信息</p>
+                    </a>
+                </div>
+                <div class="box">
+                    <a href="#orders">
+                        <img src="./img/04.png" alt="农机订单管理">
+                        <h3>农机订单管理</h3>
+                        <p>管理农机租聘服务</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- 农机信息上传 -->
+            <div id="machine" class="container">
+                <div class="form-title">农机信息上传</div>
+                <div class="form-item">
+                    <label>农机价格<span class="required">*</span></label>
+                    <div class="input-price">
+                        <div class="price-prefix"><span>¥</span></div>
+                        <input type="text" placeholder="请输入价格" class="number-input">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>商品详情<span class="required">*</span></label>
+                    <textarea class="textarea-detail" placeholder="请输入商品详情"></textarea>
+                </div>
+                <div class="form-item">
+                    <label>联系电话<span class="required">*</span></label>
+                    <div class="input-phone">
+                        <div class="phone-prefix">+86</div>
+                        <input type="text" class="phone-input" placeholder="请输入电话号码" maxlength="11">
+                        <button class="btn-confirm">确认</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 农资商品录入 -->
+            <div id="materials" class="container">
+                <div class="form-title">农资商品录入</div>
+                <div class="form-item">
+                    <label>商品照片<span class="required">*</span></label>
+                    <div class="upload-area" id="uploadArea1">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 32 24" fill="none">
+                                <path d="M29 24L3 24C1.34 24 0 22.66 0 21V3C0 1.34 1.34 0 3 0H29C30.66 0 32 1.34 32 3V21C32 22.66 30.66 24 29 24ZM7 3.5C5.07 3.5 3.5 5.07 3.5 7C3.5 8.93 5.07 10.5 7 10.5C8.93 10.5 10.5 8.93 10.5 7C10.5 5.07 8.93 3.5 7 3.5ZM4 20V17L8.47 12.53C8.76 12.24 9.24 12.24 9.53 12.53L13 16L21.47 7.53C21.76 7.24 22.24 7.24 22.53 7.53L28 13V20H4Z" fill="#666666"/>
+                            </svg>
+                        </div>
+                        <div class="text">点击或拖拽上传</div>
+                        <input type="file" class="fileInput" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>商品价格<span class="required">*</span></label>
+                    <div class="input-price">
+                        <div class="price-prefix"><span>¥</span></div>
+                        <input type="text" placeholder="请输入价格" class="number-input">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>商品详情<span class="required">*</span></label>
+                    <textarea class="textarea-detail" placeholder="请输入商品详情"></textarea>
+                </div>
+                <button class="btn-confirm">确认</button>
+            </div>
+
+            <!-- 专家信息录入 -->
+            <div id="experts" class="container">
+                <div class="form-title">专家信息录入</div>
+                <div class="form-item">
+                    <label>专家姓名<span class="required">*</span></label>
+                    <input type="text" class="input-text" placeholder="请输入专家姓名">
+                </div>
+                <div class="form-item">
+                    <label>联系电话<span class="required">*</span></label>
+                    <div class="input-phone">
+                        <div class="phone-prefix">+86</div>
+                        <input type="text" class="phone-input" placeholder="请输入电话号码" maxlength="11">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>专业领域<span class="required">*</span></label>
+                    <select class="select-field">
+                        <option value="">请选择专业领域</option>
+                        <option value="planting">种植</option>
+                        <option value="breeding">养殖</option>
+                        <option value="machine">农机</option>
+                        <option value="materials">农资</option>
+                    </select>
+                </div>
+                <button class="btn-confirm">确认</button>
+            </div>
+
+            <!-- 农机订单管理 -->
+            <div id="orders" class="container">
+                <div class="form-title">农机订单管理</div>
+                <div class="form-section">
+                    <div class="section-title"><span class="required">*</span>作业时间</div>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" name="workTime" id="time1" value="6:00-10:00">
+                            <label for="time1">6:00-10:00</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="workTime" id="time2" value="10:00-14:00">
+                            <label for="time2">10:00-14:00</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="workTime" id="time3" value="14:00-18:00">
+                            <label for="time3">14:00-18:00</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="workTime" id="time4" value="18:00-22:00">
+                            <label for="time4">18:00-22:00</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label><span class="required">*</span>作业机器</label>
+                    <select class="select-field">
+                        <option value="">请选择作业机器</option>
+                        <option value="machine1">机器1</option>
+                        <option value="machine2">机器2</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label><span class="required">*</span>发单人</label>
+                    <select class="select-field">
+                        <option value="">搜索发单人</option>
+                        <option value="sender1">发单人1</option>
+                        <option value="sender2">发单人2</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label><span class="required">*</span>接单⼈</label>
+                    <select class="select-field">
+                        <option value="">选择农机手</option>
+                        <option value="receiver1">农机手1</option>
+                        <option value="receiver2">农机手2</option>
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label><span class="required">*</span>作业地点</label>
+                    <div class="input-with-icon">
+                        <input type="text" class="input-text" placeholder="请输入作业地点">
+                        <span class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="11.62" height="13.9" viewBox="0 0 11.62 13.9" fill="none">
+                                <path d="M11.17 3.47C11.02 3.13 10.84 2.81 10.63 2.51C10.42 2.2 10.18 1.92 9.92 1.66C9.65 1.4 9.36 1.17 9.05 0.97C8.74 0.76 8.41 0.59 8.07 0.45C7.35 0.15 6.6 0 5.81 0C5.03 0 4.27 0.15 3.55 0.45C2.86 0.73 2.24 1.14 1.71 1.66C1.44 1.92 1.21 2.2 1 2.5C0.79 2.81 0.61 3.13 0.46 3.47C0.15 4.17 0 4.92 0 5.69C0 6.79 0.26 7.89 0.78 8.95C1.2 9.8 1.78 10.63 2.52 11.42C3.77 12.77 5.09 13.59 5.46 13.81C5.51 13.84 5.57 13.86 5.63 13.88C5.69 13.9 5.75 13.9 5.81 13.9C5.93 13.9 6.05 13.87 6.16 13.81C6.53 13.59 7.85 12.77 9.1 11.42C9.84 10.63 10.42 9.8 10.84 8.95C11.36 7.89 11.62 6.79 11.62 5.69C11.62 4.92 11.47 4.17 11.17 3.47ZM5.81 12.71C4.78 12.05 1.12 9.46 1.12 5.69C1.12 4.47 1.61 3.33 2.49 2.47C3.38 1.6 4.56 1.13 5.81 1.13C7.07 1.13 8.25 1.6 9.13 2.47C10.01 3.33 10.5 4.47 10.5 5.69C10.5 9.46 6.84 12.05 5.81 12.71ZM5.81 3.06C4.29 3.06 3.06 4.29 3.06 5.81C3.06 7.33 4.29 8.56 5.81 8.56C7.33 8.56 8.56 7.33 8.56 5.81C8.56 4.29 7.33 3.06 5.81 3.06ZM7.05 7.05C6.89 7.21 6.7 7.34 6.48 7.43C6.27 7.52 6.04 7.56 5.81 7.56C5.35 7.56 4.91 7.38 4.57 7.05C4.41 6.89 4.28 6.7 4.2 6.48C4.11 6.27 4.06 6.04 4.06 5.81C4.06 5.35 4.25 4.91 4.57 4.58C4.91 4.24 5.35 4.06 5.81 4.06C6.28 4.06 6.72 4.24 7.05 4.58C7.38 4.91 7.56 5.35 7.56 5.81C7.56 6.28 7.38 6.72 7.05 7.05Z" fill="#000" fill-opacity="0.88"/>
+                            </svg>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>作业面积（亩）</label>
+                    <input type="text" class="input-text number-input" id="area" placeholder="请输入作业面积">
+                </div>
+                <div class="form-item">
+                    <label><span class="required">*</span>每亩单价</label>
+                    <div class="input-price">
+                        <span>¥</span>
+                        <input type="text" id="price" class="number-input" placeholder="请输入每亩单价">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>订单总价</label>
+                    <div class="input-price input-total">
+                        <span>¥</span>
+                        <input type="text" id="total" readonly placeholder="0.00">
+                    </div>
+                </div>
+                <button class="btn-submit" id="submitBtn">提交订单</button>
+            </div>
+
+            <!-- 农业手册录入 -->
+            <div id="manuals" class="container">
+                <div class="form-title">农业手册录入</div>
+                <div class="form-item">
+                    <label>手册照片<span class="required">*</span></label>
+                    <div class="upload-area" id="uploadArea2">
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 32 24" fill="none">
+                                <path d="M29 24L3 24C1.34 24 0 22.66 0 21V3C0 1.34 1.34 0 3 0H29C30.66 0 32 1.34 32 3V21C32 22.66 30.66 24 29 24ZM7 3.5C5.07 3.5 3.5 5.07 3.5 7C3.5 8.93 5.07 10.5 7 10.5C8.93 10.5 10.5 8.93 10.5 7C10.5 5.07 8.93 3.5 7 3.5ZM4 20V17L8.47 12.53C8.76 12.24 9.24 12.24 9.53 12.53L13 16L21.47 7.53C21.76 7.24 22.24 7.24 22.53 7.53L28 13V20H4Z" fill="#666666"/>
+                            </svg>
+                        </div>
+                        <div class="text">点击或拖拽上传</div>
+                        <input type="file" class="fileInput" accept="image/*" style="display: none;">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <label>手册详情<span class="required">*</span></label>
+                    <textarea class="textarea-detail" placeholder="请输入手册详情"></textarea>
+                </div>
+                <button class="btn-submit">确认手册</button>
+            </div>
+        </main>
+    </div>
+
+    <script>
+      // 导航栏切换
+const navLinks = document.querySelectorAll('.nav-link');
+navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        // 移除所有链接的active类
+        navLinks.forEach(item => item.classList.remove('active'));
+        // 给当前点击的链接添加active类
+        this.classList.add('active');
+        
+        // 平滑滚动到对应区域
+        const targetId = this.getAttribute('href');
+        if (targetId !== '#') {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
+});
+
+// 文件上传功能
+const uploadAreas = document.querySelectorAll('.upload-area');
+uploadAreas.forEach(area => {
+    const fileInput = area.querySelector('.fileInput');
+    
+    // 点击上传
+    area.addEventListener('click', () => {
+        fileInput.click();
+    });
+    
+    // 拖拽上传
+    area.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        area.classList.add('upload-area-hover');
+    });
+    
+    area.addEventListener('dragleave', () => {
+        area.classList.remove('upload-area-hover');
+    });
+    
+    area.addEventListener('drop', (e) => {
+        e.preventDefault();
+        area.classList.remove('upload-area-hover');
+        if (e.dataTransfer.files.length) {
+            fileInput.files = e.dataTransfer.files;
+            handleFileUpload(fileInput.files[0], area);
+        }
+    });
+    
+    // 文件选择后处理
+    fileInput.addEventListener('change', () => {
+        if (fileInput.files.length) {
+            handleFileUpload(fileInput.files[0], area);
+        }
+    });
+});
+
+// 处理文件上传预览
+function handleFileUpload(file, area) {
+    if (!file.type.startsWith('image/')) {
+        alert('请上传图片文件！');
+        return;
+    }
+    
+    // 清空原有内容
+    area.innerHTML = '';
+    
+    // 创建预览图片
+    const img = document.createElement('img');
+    img.style.width = '100%';
+    img.style.height = '100%';
+    img.style.objectFit = 'contain';
+    img.src = URL.createObjectURL(file);
+    
+    // 添加删除按钮
+    const deleteBtn = document.createElement('div');
+    deleteBtn.className = 'upload-delete-btn';
+    deleteBtn.innerHTML = '×';
+    deleteBtn.addEventListener('click', () => {
+        resetUploadArea(area);
+        URL.revokeObjectURL(img.src);
+    });
+    
+    area.appendChild(img);
+    area.appendChild(deleteBtn);
+}
+
+// 重置上传区域
+function resetUploadArea(area) {
+    area.innerHTML = `
+        <div class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="24" viewBox="0 0 32 24" fill="none">
+                <path d="M29 24L3 24C1.34 24 0 22.66 0 21V3C0 1.34 1.34 0 3 0H29C30.66 0 32 1.34 32 3V21C32 22.66 30.66 24 29 24ZM7 3.5C5.07 3.5 3.5 5.07 3.5 7C3.5 8.93 5.07 10.5 7 10.5C8.93 10.5 10.5 8.93 10.5 7C10.5 5.07 8.93 3.5 7 3.5ZM4 20V17L8.47 12.53C8.76 12.24 9.24 12.24 9.53 12.53L13 16L21.47 7.53C21.76 7.24 22.24 7.24 22.53 7.53L28 13V20H4Z" fill="#666666"/>
+            </svg>
+        </div>
+        <div class="text">点击或拖拽上传</div>
+        <input type="file" class="fileInput" accept="image/*" style="display: none;">
+    `;
+    
+    // 重新绑定事件
+    const fileInput = area.querySelector('.fileInput');
+    area.addEventListener('click', () => {
+        fileInput.click();
+    });
+    fileInput.addEventListener('change', () => {
+        if (fileInput.files.length) {
+            handleFileUpload(fileInput.files[0], area);
+        }
+    });
+}
+
+// 订单总价自动计算
+const areaInput = document.getElementById('area');
+const priceInput = document.getElementById('price');
+const totalInput = document.getElementById('total');
+
+function calculateTotal() {
+    const area = parseFloat(areaInput.value) || 0;
+    const price = parseFloat(priceInput.value) || 0;
+    const total = area * price;
+    totalInput.value = total.toFixed(2);
+}
+
+if (areaInput && priceInput) {
+    areaInput.addEventListener('input', calculateTotal);
+    priceInput.addEventListener('input', calculateTotal);
+    
+    // 限制只能输入数字
+    const numberInputs = document.querySelectorAll('.number-input');
+    numberInputs.forEach(input => {
+        input.addEventListener('input', () => {
+            input.value = input.value.replace(/[^0-9.]/g, '');
+            // 限制只能有一个小数点
+            const parts = input.value.split('.');
+            if (parts.length > 2) {
+                input.value = parts[0] + '.' + parts.slice(1).join('');
+            }
+        });
+    });
+}
+
+// 电话号码格式验证
+function validatePhone(phone) {
+    if (!phone) return false;
+    return /^1[3-9]\d{9}$/.test(phone.trim());
+}
+
+// 检查上传区域是否已上传文件
+function checkUploadArea(area) {
+    return area.querySelector('img') !== null;
+}
+
+// ========== 表单校验核心函数 ==========
+// 1. 农机信息上传校验
+function validateMachineForm() {
+    const priceInput = document.querySelector('#machine .input-price input');
+    const detailInput = document.querySelector('#machine .textarea-detail');
+    const phoneInput = document.querySelector('#machine .phone-input');
+    
+    // 校验价格
+    if (!priceInput.value.trim()) {
+        alert('请填写农机价格！');
+        priceInput.focus();
+        return false;
+    }
+    if (isNaN(parseFloat(priceInput.value))) {
+        alert('农机价格请输入有效的数字！');
+        priceInput.focus();
+        return false;
+    }
+    
+    // 校验详情
+    if (!detailInput.value.trim()) {
+        alert('请填写商品详情！');
+        detailInput.focus();
+        return false;
+    }
+    
+    // 校验手机号
+    if (!validatePhone(phoneInput.value)) {
+        alert('请填写有效的11位手机号码！');
+        phoneInput.focus();
+        return false;
+    }
+    
+    return true;
+}
+
+// 2. 农资商品录入校验
+function validateMaterialsForm() {
+    const uploadArea = document.querySelector('#materials .upload-area');
+    const priceInput = document.querySelector('#materials .input-price input');
+    const detailInput = document.querySelector('#materials .textarea-detail');
+    
+    // 校验图片上传
+    if (!checkUploadArea(uploadArea)) {
+        alert('请上传商品照片！');
+        uploadArea.click();
+        return false;
+    }
+    
+    // 校验价格
+    if (!priceInput.value.trim()) {
+        alert('请填写商品价格！');
+        priceInput.focus();
+        return false;
+    }
+    if (isNaN(parseFloat(priceInput.value))) {
+        alert('商品价格请输入有效的数字！');
+        priceInput.focus();
+        return false;
+    }
+    
+    // 校验详情
+    if (!detailInput.value.trim()) {
+        alert('请填写商品详情！');
+        detailInput.focus();
+        return false;
+    }
+    
+    return true;
+}
+
+// 3. 专家信息录入校验
+function validateExpertsForm() {
+    const nameInput = document.querySelector('#experts .input-text');
+    const phoneInput = document.querySelector('#experts .phone-input');
+    const fieldSelect = document.querySelector('#experts .select-field');
+    
+    // 校验姓名
+    if (!nameInput.value.trim()) {
+        alert('请填写专家姓名！');
+        nameInput.focus();
+        return false;
+    }
+    
+    // 校验手机号
+    if (!validatePhone(phoneInput.value)) {
+        alert('请填写有效的11位手机号码！');
+        phoneInput.focus();
+        return false;
+    }
+    
+    // 校验专业领域
+    if (!fieldSelect.value) {
+        alert('请选择专家专业领域！');
+        fieldSelect.focus();
+        return false;
+    }
+    
+    return true;
+}
+
+// 4. 农机订单管理校验
+function validateOrdersForm() {
+    // 校验作业时间
+    const workTime = document.querySelector('input[name="workTime"]:checked');
+    if (!workTime) {
+        alert('请选择作业时间！');
+        return false;
+    }
+    
+    // 校验作业机器
+    const machineSelect = document.querySelector('#orders .form-item:nth-child(2) .select-field');
+    if (!machineSelect.value) {
+        alert('请选择作业机器！');
+        machineSelect.focus();
+        return false;
+    }
+    
+    // 校验发单人
+    const senderSelect = document.querySelector('#orders .form-item:nth-child(3) .select-field');
+    if (!senderSelect.value) {
+        alert('请选择发单人！');
+        senderSelect.focus();
+        return false;
+    }
+    
+    // 校验接单人
+    const receiverSelect = document.querySelector('#orders .form-item:nth-child(4) .select-field');
+    if (!receiverSelect.value) {
+        alert('请选择接单人！');
+        receiverSelect.focus();
+        return false;
+    }
+    
+    // 校验作业地点
+    const addressInput = document.querySelector('#orders .input-with-icon input');
+    if (!addressInput.value.trim()) {
+        alert('请填写作业地点！');
+        addressInput.focus();
+        return false;
+    }
+    
+    // 校验每亩单价
+    if (!priceInput.value.trim()) {
+        alert('请填写每亩单价！');
+        priceInput.focus();
+        return false;
+    }
+    if (isNaN(parseFloat(priceInput.value))) {
+        alert('每亩单价请输入有效的数字！');
+        priceInput.focus();
+        return false;
+    }
+    
+    return true;
+}
+
+// 5. 农业手册录入校验
+function validateManualsForm() {
+    const uploadArea = document.querySelector('#manuals .upload-area');
+    const detailInput = document.querySelector('#manuals .textarea-detail');
+    
+    // 校验图片上传
+    if (!checkUploadArea(uploadArea)) {
+        alert('请上传手册照片！');
+        uploadArea.click();
+        return false;
+    }
+    
+    // 校验详情
+    if (!detailInput.value.trim()) {
+        alert('请填写手册详情！');
+        detailInput.focus();
+        return false;
+    }
+    
+    return true;
+}
+
+// ========== 绑定提交事件 ==========
+document.addEventListener('DOMContentLoaded', function() {
+    // 1. 农机信息上传确认按钮
+    const machineConfirmBtn = document.querySelector('#machine .btn-confirm');
+    if (machineConfirmBtn) {
+        machineConfirmBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // 阻止默认提交
+            if (validateMachineForm()) {
+                // 校验通过，可在这里添加AJAX提交逻辑
+                alert('农机信息提交成功！');
+                // 示例：resetForm('#machine'); // 可选：提交后重置表单
+            }
+        });
+    }
+
+    // 2. 农资商品录入确认按钮
+    const materialsConfirmBtn = document.querySelector('#materials .btn-confirm');
+    if (materialsConfirmBtn) {
+        materialsConfirmBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (validateMaterialsForm()) {
+                alert('农资商品提交成功！');
+                // 提交逻辑...
+            }
+        });
+    }
+
+    // 3. 专家信息录入确认按钮
+    const expertsConfirmBtn = document.querySelector('#experts .btn-confirm');
+    if (expertsConfirmBtn) {
+        expertsConfirmBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (validateExpertsForm()) {
+                alert('专家信息提交成功！');
+                // 提交逻辑...
+            }
+        });
+    }
+
+    // 4. 农机订单管理提交按钮
+    const orderSubmitBtn = document.querySelector('#submitBtn');
+    if (orderSubmitBtn) {
+        orderSubmitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (validateOrdersForm()) {
+                alert('订单提交成功！');
+                // 提交逻辑...
+            }
+        });
+    }
+
+    // 5. 农业手册录入提交按钮
+    const manualSubmitBtn = document.querySelector('#manuals .btn-submit');
+    if (manualSubmitBtn) {
+        manualSubmitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            if (validateManualsForm()) {
+                alert('手册信息提交成功！');
+                // 提交逻辑...
+            }
+        });
+    }
+});
+    </script>
+</body>
+</html>
