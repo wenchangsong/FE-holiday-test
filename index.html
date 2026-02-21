@@ -210,16 +210,21 @@
                     </select>
                 </div>
                 <div class="form-item double-row">
-                    <label><span class="required">*</span>发单人</label>
-                    <select class="select-field">
+
+<div class="required1">
+                    <label><span class="required">*</span><span>发单人</span></label>
+</div>
+<div class="required2">
+                <label><span class="required">*</span><span>接单⼈</span></label>
+</div>
+
+                </div>
+                <div class="form-item double-row"> 
+                 <select class="select-field">
                         <option value="">搜索发单人</option>
                         <option value="sender1">发单人1</option>
                         <option value="sender2">发单人2</option>
-                    </select>
-                </div>
-                <div class="form-item double-row">
-                    <label><span class="required">*</span>接单⼈</label>
-                    <select class="select-field">
+                    </select>  <select class="select-field">
                         <option value="">选择农机手</option>
                         <option value="receiver1">农机手1</option>
                         <option value="receiver2">农机手2</option>
@@ -281,6 +286,7 @@
 
     <script>
      // 导航栏切换
+// 导航栏切换
 const navLinks = document.querySelectorAll('.nav-link');
 navLinks.forEach(link => {
     link.addEventListener('click', function(e) {
@@ -336,6 +342,7 @@ quickLinks.forEach(link => {
         }
     });
 });
+
 // 文件上传功能
 const uploadAreas = document.querySelectorAll('.upload-area');
 uploadAreas.forEach(area => {
@@ -569,7 +576,7 @@ function validateExpertsForm() {
     return true;
 }
 
-// 4. 农机订单管理校验
+// 4. 农机订单管理校验（重点更新）
 function validateOrdersForm() {
     // 校验作业时间
     const workTime = document.querySelector('input[name="workTime"]:checked');
@@ -578,47 +585,59 @@ function validateOrdersForm() {
         return false;
     }
     
-    // 校验作业机器
-    const machineSelect = document.querySelector('#orders .form-item:nth-child(2) .select-field');
-    if (!machineSelect.value) {
+    // 校验作业机器（更新选择器，适配结构变化）
+    const machineSelect = document.querySelector('#orders .form-item:not(.double-row) .select-field');
+    if (!machineSelect || !machineSelect.value) {
         alert('请选择作业机器！');
-        machineSelect.focus();
+        if (machineSelect) machineSelect.focus();
         return false;
     }
     
-    // 校验发单人
-    const senderSelect = document.querySelector('#orders .form-item:nth-child(3) .select-field');
-    if (!senderSelect.value) {
+    // 校验发单人（更新选择器，适配双行布局）
+    const senderSelect = document.querySelectorAll('#orders .form-item.double-row .select-field')[0];
+    if (!senderSelect || !senderSelect.value) {
         alert('请选择发单人！');
-        senderSelect.focus();
+        if (senderSelect) senderSelect.focus();
         return false;
     }
     
-    // 校验接单人
-    const receiverSelect = document.querySelector('#orders .form-item:nth-child(4) .select-field');
-    if (!receiverSelect.value) {
+    // 校验接单人（更新选择器，适配双行布局）
+    const receiverSelect = document.querySelectorAll('#orders .form-item.double-row .select-field')[1];
+    if (!receiverSelect || !receiverSelect.value) {
         alert('请选择接单人！');
-        receiverSelect.focus();
+        if (receiverSelect) receiverSelect.focus();
         return false;
     }
     
     // 校验作业地点
     const addressInput = document.querySelector('#orders .input-with-icon input');
-    if (!addressInput.value.trim()) {
+    if (!addressInput || !addressInput.value.trim()) {
         alert('请填写作业地点！');
-        addressInput.focus();
+        if (addressInput) addressInput.focus();
+        return false;
+    }
+    
+    // 校验作业面积
+    if (!areaInput || !areaInput.value.trim()) {
+        alert('请填写作业面积！');
+        if (areaInput) areaInput.focus();
+        return false;
+    }
+    if (isNaN(parseFloat(areaInput.value))) {
+        alert('作业面积请输入有效的数字！');
+        if (areaInput) areaInput.focus();
         return false;
     }
     
     // 校验每亩单价
-    if (!priceInput.value.trim()) {
+    if (!priceInput || !priceInput.value.trim()) {
         alert('请填写每亩单价！');
-        priceInput.focus();
+        if (priceInput) priceInput.focus();
         return false;
     }
     if (isNaN(parseFloat(priceInput.value))) {
         alert('每亩单价请输入有效的数字！');
-        priceInput.focus();
+        if (priceInput) priceInput.focus();
         return false;
     }
     

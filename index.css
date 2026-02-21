@@ -13,30 +13,36 @@
     --white-color: #ffffff;
     
     /* 尺寸变量 */
-    --sidebar-width: 220px;
-    --header-height: 8.2vh;
-    --border-radius: 4px;
-    --card-radius: 20px;
-    --spacing-sm: 8px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
+    --sidebar-width: 256px;
+            --sidebar-collapsed-width: 60px;
+            --header-height: 64px;
+            --border-radius: 4px;
+            --card-radius: 20px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
 }
 
 /* 全局样式优化 */
 body {
-    padding-left: var(--sidebar-width);
-    min-height: 100vh;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-size: 14px;
-}
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-size: 14px;
+            transition: padding-left 0.3s ease;
+        }
 
 /* 主容器包装 */
-.main-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
+  .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin-left: var(--sidebar-width);
+            transition: margin-left 0.3s ease;
+        }
+
 
 
 /* 侧边栏优化 */
@@ -401,7 +407,12 @@ margin-left: 64px;
     flex-direction: row;
     gap: 20px;
 }
-
+#orders .form-item.double-row .required1{
+     flex: 1;
+}
+#orders .form-item.double-row .required2{
+     flex: 1;
+}
 #orders .form-item.double-row > div {
     flex: 1; /* 两列平分宽度 */
     display: flex;
